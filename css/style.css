@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #ffffff;
+  --header-bg: #efefef;
+  --text-color: #333333;
+  --border-color: #d9d9d9;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+body {
+  min-height: 100vh;
+}
+
+.page-header {
+  background: var(--header-bg);
+  text-align: center;
+  padding: 14px 16px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.page-content {
+  min-height: calc(100vh - 58px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 32px 16px 48px;
+}
+
+.color-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.color-box {
+  width: 74px;
+  height: 74px;
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  color: #666666;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.color-box:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.color-box.is-filled {
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.color-box.is-yellow {
+  color: #444444;
+}
+
+.greet-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#greetButton,
+#nameInput {
+  height: 30px;
+  border: 1px solid #bcbcbc;
+  font-size: 14px;
+}
+
+#nameInput {
+  width: 152px;
+  padding: 0 10px;
+}
+
+#greetButton {
+  min-width: 60px;
+  padding: 0 12px;
+  background: #d9d9d9;
+  color: #333333;
+  cursor: pointer;
+}
+
+#greetButton:hover {
+  background: #cfcfcf;
+}
+
+@media (max-width: 600px) {
+  .page-content {
+    gap: 44px;
+  }
+
+  .color-panel {
+    gap: 16px;
+  }
+
+  .greet-panel {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #nameInput {
+    width: min(280px, 100%);
+  }
+
+  #greetButton {
+    width: min(280px, 100%);
+  }
+}
