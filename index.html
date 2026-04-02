@@ -3,27 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 3 - DOM Implementation</title>
+    <title>DOM Assignment 3</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="page-header">
-      <h1 id="greetingText">Hello</h1>
-    </header>
+    <h1 id="greetingText">Hello</h1>
 
-    <main class="page-content">
-      <section class="color-panel" aria-label="Color boxes">
-        <button class="color-box" data-color="red" type="button">Red</button>
-        <button class="color-box" data-color="blue" type="button">Blue</button>
-        <button class="color-box" data-color="green" type="button">Green</button>
-        <button class="color-box" data-color="yellow" type="button">Yellow</button>
-      </section>
+    <div class="boxes">
+      <button id="redBox" type="button">Red</button>
+      <button id="blueBox" type="button">Blue</button>
+      <button id="greenBox" type="button">Green</button>
+      <button id="yellowBox" type="button">Yellow</button>
+    </div>
 
-      <section class="greet-panel" aria-label="Greeting form">
-        <input id="nameInput" type="text" value="" aria-label="Enter your name" />
-        <button id="greetButton" type="button">Greet</button>
-      </section>
-    </main>
+    <div class="greeting-area">
+      <input id="nameInput" type="text" placeholder="Enter your name" />
+      <button id="greetButton" type="button">Greet</button>
+    </div>
 
     <script src="js/script.js"></script>
   </body>

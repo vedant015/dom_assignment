@@ -1,36 +1,49 @@
 const greetingText = document.getElementById('greetingText');
 const nameInput = document.getElementById('nameInput');
 const greetButton = document.getElementById('greetButton');
-const colorBoxes = document.querySelectorAll('.color-box');
 
-const colorMap = {
-  red: '#ff0000',
-  blue: '#0000ff',
-  green: '#008000',
-  yellow: '#ffff00',
-};
+const redBox = document.getElementById('redBox');
+const blueBox = document.getElementById('blueBox');
+const greenBox = document.getElementById('greenBox');
+const yellowBox = document.getElementById('yellowBox');
 
-colorBoxes.forEach((box) => {
-  box.addEventListener('click', () => {
-    const colorName = box.dataset.color;
-    const isFilled = box.classList.contains('is-filled');
+redBox.addEventListener('click', function () {
+  if (redBox.classList.contains('fill')) {
+    redBox.classList.remove('fill');
+  } else {
+    redBox.classList.add('fill');
+  }
+});
 
-    if (isFilled) {
-      box.style.backgroundColor = '';
-      box.classList.remove('is-filled', 'is-yellow');
-      return;
-    }
+blueBox.addEventListener('click', function () {
+  if (blueBox.classList.contains('fill')) {
+    blueBox.classList.remove('fill');
+  } else {
+    blueBox.classList.add('fill');
+  }
+});
 
-    box.style.backgroundColor = colorMap[colorName];
-    box.classList.add('is-filled');
+greenBox.addEventListener('click', function () {
+  if (greenBox.classList.contains('fill')) {
+    greenBox.classList.remove('fill');
+  } else {
+    greenBox.classList.add('fill');
+  }
+});
 
-    if (colorName === 'yellow') {
-      box.classList.add('is-yellow');
-    }
-  });
+yellowBox.addEventListener('click', function () {
+  if (yellowBox.classList.contains('yellow-fill')) {
+    yellowBox.classList.remove('yellow-fill');
+  } else {
+    yellowBox.classList.add('yellow-fill');
+  }
 });
 
 greetButton.addEventListener('click', () => {
   const name = nameInput.value.trim();
-  greetingText.textContent = name ? `Hello ${name}` : 'Hello';
+  if (name === '') {
+    greetingText.textContent = 'Hello';
+  } else {
+    greetingText.textContent = 'Hello ' + name;
+  }
 });
